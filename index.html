@@ -3290,6 +3290,114 @@
       document.body.removeChild(link);
     }
 
+    function printQRPoster() {
+      const schoolName = appSettings.schoolName || DEFAULT_SETTINGS.schoolName;
+      const academicYear = appSettings.academicYear || DEFAULT_SETTINGS.academicYear;
+      const targetUrl = (document.getElementById('qr-target-url')?.value || window.location.href).trim();
+      const qrImg = document.querySelector('#qrcode-canvas img');
+      const qrCanvas = document.querySelector('#qrcode-canvas canvas');
+      const qrDataUrl = qrImg && qrImg.src ? qrImg.src : qrCanvas ? qrCanvas.toDataURL('image/png') : '';
+
+      if (!qrDataUrl) {
+        showToast('Gambar QR Code belum siap dicetak.', 'warning');
+        return;
+      }
+
+      const posterHtml = `<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Poster QR Absensi - ${escapeHtml(schoolName)}</title>
+  <style>
+    @page { size: A4 portrait; margin: 16mm; }
+    body {
+      font-family: "Times New Roman", Times, serif;
+      color: #0f172a;
+      margin: 0;
+      padding: 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .poster-card {
+      width: 100%;
+      max-width: 620px;
+      border: 3px solid #0f766e;
+      border-radius: 20px;
+      padding: 28px 24px;
+      text-align: center;
+    }
+    .school-name { font-size: 20pt; font-weight: bold; margin: 0; }
+    .sub-title { font-size: 11pt; color: #334155; margin-top: 6px; }
+    .instruction { font-size: 12pt; margin: 16px 0 20px; }
+    .qr-box {
+      display: inline-block;
+      padding: 14px;
+      border: 2px solid #0f766e;
+      border-radius: 16px;
+      background: #ffffff;
+    }
+    .qr-box img { width: 240px; height: 240px; display: block; }
+    .url-box {
+      margin-top: 20px;
+      padding: 10px 12px;
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-radius: 10px;
+      font-family: monospace;
+      font-size: 9.5pt;
+      word-break: break-all;
+    }
+  </style>
+</head>
+<body>
+  <div class="poster-card">
+    <h1 class="school-name">${escapeHtml(schoolName)}</h1>
+    <div class="sub-title">${escapeHtml(academicYear)}</div>
+    <p class="instruction">Pindai (Scan) QR Code ini menggunakan kamera HP untuk mengisi absensi kehadiran.</p>
+    <div class="qr-box">
+      <img src="${qrDataUrl}" alt="QR Code Absensi" />
+    </div>
+    <div class="url-box">${escapeHtml(targetUrl)}</div>
+  </div>
+</body>
+</html>`;
+
+      const iframe = document.getElementById('f4-print-iframe');
+      if (iframe) {
+        try {
+          const doc = iframe.contentDocument || iframe.contentWindow.document;
+          doc.open();
+          doc.write(posterHtml);
+          doc.close();
+          setTimeout(() => {
+            try {
+              iframe.contentWindow.focus();
+              iframe.contentWindow.print();
+            } catch (_) {
+              openPrintWindowFallback('qr');
+            }
+          }, 250);
+          return;
+        } catch (_) {}
+      }
+
+      const win = window.open('', '_blank', 'width=800,height=700');
+      if (!win) {
+        showToast('Pop-up cetak diblokir browser. Izinkan pop-up atau gunakan Unduh Gambar QR (PNG).', 'warning');
+        return;
+      }
+      win.document.open();
+      win.document.write(posterHtml);
+      win.document.close();
+      win.focus();
+      setTimeout(() => {
+        try {
+          win.print();
+        } catch (_) {}
+      }, 300);
+    }
+
     // =========================================================================
     // 10. MODAL KONFIRMASI & TOAST NOTIFIKASI
     // =========================================================================
