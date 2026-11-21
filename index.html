@@ -1636,8 +1636,8 @@
               ? 'bg-emerald-100 text-emerald-800'
               : 'bg-slate-100 text-slate-600';
           return `
-            <button type="button" onclick="selectTeacherItem('${escapeHtml(String(t.id))}')"
-              class="w-full text-left px-4 py-3 hover:bg-teal-50/80 transition flex items-center justify-between gap-3">
+            <button type="button" data-teacher-id="${escapeHtml(String(t.id))}"
+              class="btn-select-teacher w-full text-left px-4 py-3 hover:bg-teal-50/80 transition flex items-center justify-between gap-3">
               <div class="min-w-0">
                 <div class="text-sm font-bold text-slate-800 truncate">${escapeHtml(t.name)}</div>
                 <div class="text-[11px] font-mono text-slate-500 truncate">${escapeHtml(formatIdentityText(t.id))}</div>
@@ -1649,6 +1649,17 @@
           `;
         })
         .join('');
+
+      if (listEl.dataset.boundSelect !== '1') {
+        listEl.dataset.boundSelect = '1';
+        listEl.addEventListener('click', (event) => {
+          const btn = event.target.closest('.btn-select-teacher');
+          if (btn) {
+            const id = btn.getAttribute('data-teacher-id') || '';
+            if (id) selectTeacherItem(id);
+          }
+        });
+      }
     }
 
     function selectTeacherItem(teacherId) {
@@ -2335,7 +2346,7 @@
           else if (r.status === 'Hadir - Pulang') badgeClass = 'bg-blue-100 text-blue-800';
 
           const photoBtn = r.photo
-            ? `<button type="button" onclick="openPhotoModalByKey('${escapeHtml(r.key)}')" class="p-2 rounded-xl text-teal-700 hover:bg-teal-50 transition" title="Lihat Foto Bukti">
+            ? `<button type="button" data-photo-key="${escapeHtml(r.key)}" class="btn-view-photo p-2 rounded-xl text-teal-700 hover:bg-teal-50 transition" title="Lihat Foto Bukti">
                  <i data-lucide="image" class="w-4 h-4"></i>
                </button>`
             : '';
@@ -2360,7 +2371,7 @@
               <td class="py-3 px-4 text-center whitespace-nowrap no-print">
                 <div class="inline-flex items-center gap-1">
                   ${photoBtn}
-                  <button type="button" onclick="confirmDeleteDayEntry('${escapeHtml(r.dateISO)}', '${escapeHtml(r.teacherId)}', '${escapeHtml(r.teacherName)}')" class="p-2 rounded-xl text-slate-400 hover:text-rose-600 hover:bg-rose-50 transition" title="Hapus Data Hari Ini">
+                  <button type="button" data-delete-key="${escapeHtml(r.key)}" class="btn-delete-day p-2 rounded-xl text-slate-400 hover:text-rose-600 hover:bg-rose-50 transition" title="Hapus Data Hari Ini">
                     <i data-lucide="trash-2" class="w-4 h-4"></i>
                   </button>
                 </div>
@@ -2370,7 +2381,29 @@
         })
         .join('');
 
+      bindAttendanceTableActions();
       lucide.createIcons();
+    }
+
+    function bindAttendanceTableActions() {
+      const tbody = document.getElementById('attendance-table-body');
+      if (!tbody || tbody.dataset.boundActions === '1') return;
+      tbody.dataset.boundActions = '1';
+
+      tbody.addEventListener('click', (event) => {
+        const photoBtn = event.target.closest('.btn-view-photo');
+        if (photoBtn) {
+          const key = photoBtn.getAttribute('data-photo-key') || '';
+          if (key) openPhotoModalByKey(key);
+          return;
+        }
+
+        const delBtn = event.target.closest('.btn-delete-day');
+        if (delBtn) {
+          const key = delBtn.getAttribute('data-delete-key') || '';
+          if (key) confirmDeleteDayEntryByKey(key);
+        }
+      });
     }
 
     function openPhotoModalByKey(groupKey) {
@@ -2388,20 +2421,36 @@
       document.getElementById('modal-photo-img').src = '';
     }
 
+    function confirmDeleteDayEntryByKey(groupKey) {
+      const rows = buildDailySummaryRows();
+      const target = rows.find((r) => r.key === groupKey);
+      if (!target) {
+        showToast('Data absensi tidak ditemukan.', 'warning');
+        return;
+      }
+      confirmDeleteDayEntry(target.dateISO, target.teacherId, target.teacherName);
+    }
+
     function confirmDeleteDayEntry(dateISO, teacherId, teacherName) {
       openConfirmModal(
         `Hapus Absensi ${teacherName}?`,
         `Seluruh catatan absensi pada tanggal ${formatDateShortID(dateISO)} untuk ${teacherName} akan dihapus.`,
         async () => {
-          const toDelete = attendanceRecords.filter(
-            (r) => r.dateISO === dateISO && String(r.teacherId) === String(teacherId)
-          );
-          attendanceRecords = attendanceRecords.filter(
-            (r) => !(r.dateISO === dateISO && String(r.teacherId) === String(teacherId))
-          );
+          const toDelete = attendanceRecords.filter((r) => {
+            const dISO = r.dateISO || (parseValidDate(r.timestamp) ? parseValidDate(r.timestamp).toISOString().slice(0, 10) : '');
+            const tId = String(r.teacherId || r.teacherName || '');
+            return dISO === dateISO && tId === String(teacherId);
+          });
+          const deleteIds = new Set(toDelete.map((item) => item.id).filter(Boolean));
+          attendanceRecords = attendanceRecords.filter((r) => {
+            if (r.id && deleteIds.has(r.id)) return false;
+            const dISO = r.dateISO || (parseValidDate(r.timestamp) ? parseValidDate(r.timestamp).toISOString().slice(0, 10) : '');
+            const tId = String(r.teacherId || r.teacherName || '');
+            return !(dISO === dateISO && tId === String(teacherId));
+          });
           saveRecordsLocal();
           for (const item of toDelete) {
-            await deleteRecordFromFirebase(item.id);
+            if (item.id) await deleteRecordFromFirebase(item.id);
           }
           renderAttendanceTable();
           renderMonthlyIndividualReport();
@@ -2803,10 +2852,10 @@
               </div>
             </div>
             <div class="flex items-center gap-1.5 shrink-0">
-              <button type="button" onclick="openEditTeacherModal('${escapeHtml(t.id)}')" class="p-2 text-slate-500 hover:text-teal-700 hover:bg-teal-50 rounded-xl transition" title="Edit">
+              <button type="button" data-edit-teacher-id="${escapeHtml(String(t.id))}" class="btn-edit-teacher p-2 text-slate-500 hover:text-teal-700 hover:bg-teal-50 rounded-xl transition" title="Edit">
                 <i data-lucide="pencil" class="w-4 h-4"></i>
               </button>
-              <button type="button" onclick="confirmDeleteTeacher('${escapeHtml(t.id)}')" class="p-2 text-slate-500 hover:text-rose-600 hover:bg-rose-50 rounded-xl transition" title="Hapus">
+              <button type="button" data-delete-teacher-id="${escapeHtml(String(t.id))}" class="btn-delete-teacher p-2 text-slate-500 hover:text-rose-600 hover:bg-rose-50 rounded-xl transition" title="Hapus">
                 <i data-lucide="trash-2" class="w-4 h-4"></i>
               </button>
             </div>
@@ -2814,6 +2863,23 @@
         `
         )
         .join('');
+
+      if (container.dataset.boundActions !== '1') {
+        container.dataset.boundActions = '1';
+        container.addEventListener('click', (event) => {
+          const editBtn = event.target.closest('.btn-edit-teacher');
+          if (editBtn) {
+            const id = editBtn.getAttribute('data-edit-teacher-id') || '';
+            if (id) openEditTeacherModal(id);
+            return;
+          }
+          const delBtn = event.target.closest('.btn-delete-teacher');
+          if (delBtn) {
+            const id = delBtn.getAttribute('data-delete-teacher-id') || '';
+            if (id) confirmDeleteTeacher(id);
+          }
+        });
+      }
       lucide.createIcons();
     }
 
