@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sistem Absensi Guru & Karyawan - MI Raudlatus Sholihin Gemolong</title>
+  <title>Sistem Absensi Guru &amp; Karyawan - MI Raudlatus Sholihin Gemolong</title>
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Google Fonts: Inter -->
@@ -143,7 +143,7 @@
               </span>
             </div>
             <p id="header-academic-year" class="text-emerald-100 text-xs sm:text-sm font-medium mt-0.5">
-              Sistem Absensi Guru & Tenaga Kependidikan • Tahun Ajaran 2026/2027
+              Sistem Absensi Guru &amp; Tenaga Kependidikan • Tahun Ajaran 2026/2027
             </p>
           </div>
         </div>
@@ -164,17 +164,17 @@
 
       <!-- Navigasi Tab -->
       <nav id="main-navigation-tabs" class="flex gap-2 mt-5 overflow-x-auto pb-1">
-        <button onclick="switchTab('form')" id="tab-btn-form" class="tab-btn flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold transition-all whitespace-nowrap bg-white text-teal-800 shadow-sm">
+        <button type="button" onclick="switchTab('form')" id="tab-btn-form" class="tab-btn flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold transition-all whitespace-nowrap bg-white text-teal-800 shadow-sm">
           <i data-lucide="user-check" class="w-4 h-4"></i>
           <span>Form Absensi Guru</span>
         </button>
-        <button onclick="switchTab('qr')" id="tab-btn-qr" class="tab-btn flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold transition-all whitespace-nowrap bg-white/10 text-white hover:bg-white/20">
+        <button type="button" onclick="switchTab('qr')" id="tab-btn-qr" class="tab-btn flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold transition-all whitespace-nowrap bg-white/10 text-white hover:bg-white/20">
           <i data-lucide="qr-code" class="w-4 h-4"></i>
           <span>Cetak QR Absensi</span>
         </button>
-        <button onclick="switchTab('admin')" id="tab-btn-admin" class="tab-btn flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold transition-all whitespace-nowrap bg-white/10 text-white hover:bg-white/20">
+        <button type="button" onclick="switchTab('admin')" id="tab-btn-admin" class="tab-btn flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold transition-all whitespace-nowrap bg-white/10 text-white hover:bg-white/20">
           <i data-lucide="shield-check" class="w-4 h-4"></i>
-          <span>Rekap & Admin</span>
+          <span>Rekap &amp; Admin</span>
         </button>
       </nav>
 
@@ -234,7 +234,7 @@
           </div>
         </div>
 
-        <button onclick="resetAttendanceForm()" class="mt-6 w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-teal-700 hover:bg-teal-800 text-white font-semibold px-6 py-3 rounded-xl transition shadow-sm">
+        <button type="button" onclick="resetAttendanceForm()" class="mt-6 w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-teal-700 hover:bg-teal-800 text-white font-semibold px-6 py-3 rounded-xl transition shadow-sm">
           <i data-lucide="rotate-ccw" class="w-4 h-4"></i>
           <span>Isi Absensi Lainnya</span>
         </button>
@@ -245,7 +245,7 @@
         <div class="border-b border-slate-100 pb-4 mb-6">
           <h2 class="text-lg sm:text-xl font-bold text-slate-800 flex items-center gap-2">
             <i data-lucide="clipboard-check" class="w-5 h-5 text-teal-600"></i>
-            <span>Formulir Kehadiran Guru & Karyawan</span>
+            <span>Formulir Kehadiran Guru &amp; Karyawan</span>
           </h2>
           <p class="text-xs sm:text-sm text-slate-500 mt-1">
             Silakan pilih nama Anda, tentukan status kehadiran, pilih status kerja hari ini, dan lampirkan bukti foto.
@@ -361,7 +361,7 @@
             </div>
           </div>
 
-          <!-- 3. Status Kerja / Keterangan Hari (WFO, WFH, Dinas Luar / LK, Sakit / Izin) -->
+          <!-- 3. Status Kerja / Keterangan Hari (WFO, WFH, Dinas Luar / LK, Sakit, Izin) -->
           <div>
             <label for="work-mode-select" class="block text-sm font-semibold text-slate-700 mb-1.5">
               3. Status Kerja / Keterangan Hari <span class="text-rose-500">*</span>
@@ -374,7 +374,8 @@
               <option value="WFO">WFO (Work From Office / Hadir di Madrasah)</option>
               <option value="WFH">WFH (Work From Home - Wajib Ada Surat Tugas WFH)</option>
               <option value="Dinas Luar / LK">Dinas Luar / LK (Luar Kantor / Kegiatan Resmi)</option>
-              <option value="Sakit / Izin">Sakit / Izin</option>
+              <option value="Sakit">Sakit</option>
+              <option value="Izin">Izin</option>
             </select>
             <p id="wfh-rule-note" class="mt-1.5 text-[11px] text-slate-500">
               *Ketentuan: Status <strong>WFH</strong> wajib disertai Surat Tugas WFH resmi dan keterangan penugasan.
@@ -481,7 +482,7 @@
           MI Raudlatus Sholihin Gemolong
         </h2>
         <p class="text-sm text-slate-500 mt-1">
-          Pindai (Scan) QR Code di bawah ini menggunakan kamera HP untuk mengisi Absensi Kehadiran Guru & Karyawan
+          Pindai (Scan) QR Code di bawah ini menggunakan kamera HP untuk mengisi Absensi Kehadiran Guru &amp; Karyawan
         </p>
 
         <!-- Kotak QR Code -->
@@ -532,7 +533,7 @@
         <div class="w-14 h-14 bg-teal-100 text-teal-700 rounded-2xl flex items-center justify-center mx-auto mb-4">
           <i data-lucide="lock" class="w-7 h-7"></i>
         </div>
-        <h2 class="text-xl font-bold text-slate-800">Akses Rekap & Admin</h2>
+        <h2 class="text-xl font-bold text-slate-800">Akses Rekap &amp; Admin</h2>
         <div class="mt-2 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-teal-50 text-teal-800 text-xs font-semibold border border-teal-200">
           <i data-lucide="user-cog" class="w-3.5 h-3.5"></i>
           <span>Admin: <span id="lock-screen-admin-name">Muhammad Arjun Syifa', S.Pd.</span></span>
@@ -574,7 +575,7 @@
               <i data-lucide="eye-off" class="w-3.5 h-3.5"></i>
               <span>Kunci Tampilan Guru</span>
             </button>
-            <button onclick="lockAdmin()" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold text-rose-600 hover:bg-rose-50 transition">
+            <button type="button" onclick="lockAdmin()" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold text-rose-600 hover:bg-rose-50 transition">
               <i data-lucide="log-out" class="w-3.5 h-3.5"></i>
               <span>Kunci Admin</span>
             </button>
@@ -584,17 +585,17 @@
         <!-- Sub-Navigasi Admin (4 Sub-Tab) -->
         <div class="bg-white p-2 rounded-2xl shadow-sm border border-slate-200 flex flex-wrap items-center justify-between gap-2 no-print">
           <div class="flex flex-wrap gap-1.5">
-            <button onclick="switchAdminSubTab('rekap')" id="subtab-btn-rekap" class="admin-subtab px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-teal-700 text-white transition">
+            <button type="button" onclick="switchAdminSubTab('rekap')" id="subtab-btn-rekap" class="admin-subtab px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-teal-700 text-white transition">
               Rekap Harian
             </button>
-            <button onclick="switchAdminSubTab('bulanan')" id="subtab-btn-bulanan" class="admin-subtab px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-600 hover:bg-slate-100 transition">
+            <button type="button" onclick="switchAdminSubTab('bulanan')" id="subtab-btn-bulanan" class="admin-subtab px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-600 hover:bg-slate-100 transition">
               Laporan Bulanan Per Guru (F4)
             </button>
-            <button onclick="switchAdminSubTab('guru')" id="subtab-btn-guru" class="admin-subtab px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-600 hover:bg-slate-100 transition">
+            <button type="button" onclick="switchAdminSubTab('guru')" id="subtab-btn-guru" class="admin-subtab px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-600 hover:bg-slate-100 transition">
               Data Guru (<span id="guru-count-badge">32</span>)
             </button>
-            <button onclick="switchAdminSubTab('pengaturan')" id="subtab-btn-pengaturan" class="admin-subtab px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-600 hover:bg-slate-100 transition">
-              Pengaturan & Cloud
+            <button type="button" onclick="switchAdminSubTab('pengaturan')" id="subtab-btn-pengaturan" class="admin-subtab px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-600 hover:bg-slate-100 transition">
+              Pengaturan &amp; Cloud
             </button>
           </div>
           <button type="button" onclick="syncFromFirebaseManual()" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold text-teal-700 bg-teal-50 hover:bg-teal-100 transition">
@@ -649,7 +650,7 @@
               <div>
                 <label class="block text-xs font-semibold text-slate-600 mb-1">Filter Nama Guru / Karyawan</label>
                 <select id="filter-teacher" onchange="renderAttendanceTable()" class="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-teal-500">
-                  <option value="">Semua Guru & Karyawan</option>
+                  <option value="">Semua Guru &amp; Karyawan</option>
                 </select>
               </div>
               <div>
@@ -700,7 +701,7 @@
           <div id="daily-print-wrapper" class="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden print-container">
             <div class="hidden print-only f4-official-report text-center border-b-2 border-black pb-2 mb-3">
               <div class="text-base font-bold uppercase tracking-wide" id="print-school-name">MI Raudlatus Sholihin Gemolong</div>
-              <div class="text-sm font-bold uppercase mt-0.5">Laporan Rekapitulasi Kehadiran Harian Guru & Tenaga Kependidikan</div>
+              <div class="text-sm font-bold uppercase mt-0.5">Laporan Rekapitulasi Kehadiran Harian Guru &amp; Tenaga Kependidikan</div>
               <div class="text-xs mt-0.5" id="print-filter-info"></div>
             </div>
 
@@ -740,7 +741,7 @@
                 <div class="font-bold">Admin Pengelola Absensi</div>
                 <div class="h-16"></div>
                 <div id="daily-print-admin-name" class="font-bold underline">Muhammad Arjun Syifa', S.Pd.</div>
-                <div>Petugas Rekap Kehadiran</div>
+                <div id="daily-print-admin-id">ID. 17855943181078</div>
               </div>
             </div>
           </div>
@@ -811,10 +812,22 @@
                   <input type="time" id="sched-out-saturday" value="15:00" onchange="renderMonthlyIndividualReport()" title="Jadwal Pulang Sabtu" class="w-1/2 px-2 py-2 bg-slate-50 border border-slate-300 rounded-xl text-xs font-mono focus:outline-none focus:ring-2 focus:ring-teal-500" />
                 </div>
               </div>
-              <div>
-                <label class="block text-xs font-semibold text-slate-600 mb-1">Tanggal Libur &amp; Keterangan</label>
-                <input type="text" id="monthly-holiday-dates-input" placeholder="Contoh: 1-2 (Cuti bersama), 17 (Hari kemerdekaan), 20-27 (Liburan semester)" oninput="renderMonthlyIndividualReport()" class="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded-xl text-xs font-mono focus:outline-none focus:ring-2 focus:ring-teal-500" />
-                <p class="text-[11px] text-slate-400 mt-1">Format: <code>tgl (keterangan)</code> atau rentang <code>1-2 (Cuti bersama)</code>, pisahkan koma.</p>
+              <div class="sm:col-span-2 lg:col-span-4 bg-slate-50/80 border border-slate-200 rounded-2xl p-3 space-y-2.5">
+                <div class="flex flex-wrap items-center justify-between gap-2">
+                  <label class="block text-xs font-bold text-slate-700">
+                    Daftar Tanggal Libur &amp; Keterangan Khusus (Opsional)
+                  </label>
+                  <button type="button" onclick="addHolidayRow()" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-teal-700 hover:bg-teal-800 text-white text-[11px] font-semibold transition">
+                    <i data-lucide="plus" class="w-3.5 h-3.5"></i>
+                    <span>Tambah Tanggal Libur</span>
+                  </button>
+                </div>
+                <div id="holiday-rows-container" class="space-y-2">
+                  <!-- Baris tanggal & keterangan libur -->
+                </div>
+                <p class="text-[11px] text-slate-500">
+                  Isi tanggal tunggal (misal <code>17</code>) atau rentang tanggal (misal <code>1-2</code> atau <code>20-27</code>) di kotak kiri, lalu ketik keterangannya di kotak kanan (misal <code>Cuti Bersama</code>, <code>Hari Kemerdekaan</code>, <code>Liburan Semester</code>).
+                </p>
               </div>
             </div>
 
@@ -942,7 +955,7 @@
                 <div>Admin Absensi,</div>
                 <div class="h-16"></div>
                 <div id="mreport-sign-admin-name" class="font-bold underline">Muhammad Arjun Syifa', S.Pd.</div>
-                <div>Petugas Rekap</div>
+                <div id="mreport-sign-admin-id">ID. 17855943181078</div>
               </div>
 
               <!-- Tanda Tangan Kepala Madrasah -->
@@ -983,7 +996,7 @@
                   </div>
                 </div>
                 <div>
-                  <label class="block text-xs font-semibold text-slate-600 mb-1">Nama Lengkap & Gelar *</label>
+                  <label class="block text-xs font-semibold text-slate-600 mb-1">Nama Lengkap &amp; Gelar *</label>
                   <input type="text" id="new-teacher-name" placeholder="Contoh: Ahmad Fauzi, S.Pd.I" required class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-teal-500" />
                 </div>
                 <div>
@@ -1015,7 +1028,7 @@
           <!-- Daftar Guru Terdaftar -->
           <div class="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden">
             <div class="p-4 sm:p-5 border-b border-slate-100 flex flex-wrap items-center justify-between gap-2">
-              <h3 class="font-bold text-slate-800">Daftar Guru & Karyawan (MI Raudlatus Sholihin Gemolong)</h3>
+              <h3 class="font-bold text-slate-800">Daftar Guru &amp; Karyawan (MI Raudlatus Sholihin Gemolong)</h3>
               <div class="flex items-center gap-3">
                 <span class="text-xs text-slate-500">Klik ikon pensil untuk ubah jabatan/nama</span>
                 <button type="button" onclick="resetDefaultTeachersConfirm()" class="text-xs font-semibold text-amber-700 hover:text-amber-800 bg-amber-50 hover:bg-amber-100 px-3 py-1.5 rounded-xl transition">
@@ -1036,7 +1049,7 @@
           <div class="bg-white p-5 sm:p-6 rounded-3xl border border-slate-200 shadow-sm max-w-2xl space-y-5">
             <h3 class="font-bold text-slate-800 flex items-center gap-2 border-b border-slate-100 pb-3">
               <i data-lucide="settings" class="w-5 h-5 text-teal-600"></i>
-              <span>Identitas Sekolah, Pejabat Pengesah & Firebase Cloud</span>
+              <span>Identitas Sekolah, Pejabat Pengesah &amp; Firebase Cloud</span>
             </h3>
             <form onsubmit="saveSchoolSettings(event)" class="space-y-4">
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -1093,7 +1106,7 @@
 
               <div class="flex flex-wrap gap-3 pt-2">
                 <button type="submit" class="bg-teal-700 hover:bg-teal-800 text-white font-semibold px-5 py-2.5 rounded-xl text-sm transition shadow-sm">
-                  Simpan & Tes Koneksi
+                  Simpan &amp; Tes Koneksi
                 </button>
                 <button type="button" onclick="syncFromFirebaseManual()" class="bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold px-4 py-2.5 rounded-xl text-sm transition">
                   Sinkronkan Sekarang
@@ -1109,7 +1122,7 @@
 
   <!-- Footer -->
   <footer class="bg-white border-t border-slate-200 py-4 px-4 text-center text-xs text-slate-500 no-print">
-    Sistem Absensi Digital Guru & Karyawan • MI Raudlatus Sholihin Gemolong
+    Sistem Absensi Digital Guru &amp; Karyawan • MI Raudlatus Sholihin Gemolong
   </footer>
 
   <!-- Modal Preview Foto Ukuran Penuh -->
@@ -1155,7 +1168,7 @@
           </div>
         </div>
         <div>
-          <label class="block text-xs font-semibold text-slate-600 mb-1">Nama Lengkap & Gelar</label>
+          <label class="block text-xs font-semibold text-slate-600 mb-1">Nama Lengkap &amp; Gelar</label>
           <input type="text" id="edit-teacher-name" required class="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-teal-500" />
         </div>
         <div>
@@ -1211,8 +1224,219 @@
       SETTINGS: 'mi_raudlatus_sholihin/settings'
     };
 
+    const TANGGAL_MERAH_LOKAL = {
+      nasional: [
+        // 2025
+        { date: '2025-01-01', label: 'Tahun Baru 2025 Masehi' },
+        { date: '2025-01-27', label: 'Isra Mikraj Nabi Muhammad SAW' },
+        { date: '2025-01-28', label: 'Cuti Bersama Tahun Baru Imlek' },
+        { date: '2025-01-29', label: 'Tahun Baru Imlek 2576 Kongzili' },
+        { date: '2025-03-28', label: 'Cuti Bersama Hari Suci Nyepi' },
+        { date: '2025-03-29', label: 'Hari Suci Nyepi Tahun Baru Saka 1947' },
+        { date: '2025-03-31', label: 'Idul Fitri 1446 Hijriah' },
+        { date: '2025-04-01', label: 'Idul Fitri 1446 Hijriah' },
+        { date: '2025-04-02', label: 'Cuti Bersama Idul Fitri 1446 Hijriah' },
+        { date: '2025-04-03', label: 'Cuti Bersama Idul Fitri 1446 Hijriah' },
+        { date: '2025-04-04', label: 'Cuti Bersama Idul Fitri 1446 Hijriah' },
+        { date: '2025-04-07', label: 'Cuti Bersama Idul Fitri 1446 Hijriah' },
+        { date: '2025-04-18', label: 'Wafat Yesus Kristus' },
+        { date: '2025-04-20', label: 'Kebangkitan Yesus Kristus (Paskah)' },
+        { date: '2025-05-01', label: 'Hari Buruh Internasional' },
+        { date: '2025-05-12', label: 'Hari Raya Waisak 2569 BE' },
+        { date: '2025-05-13', label: 'Cuti Bersama Hari Raya Waisak' },
+        { date: '2025-05-29', label: 'Kenaikan Yesus Kristus' },
+        { date: '2025-05-30', label: 'Cuti Bersama Kenaikan Yesus Kristus' },
+        { date: '2025-06-01', label: 'Hari Lahir Pancasila' },
+        { date: '2025-06-06', label: 'Idul Adha 1446 Hijriah' },
+        { date: '2025-06-09', label: 'Cuti Bersama Idul Adha 1446 Hijriah' },
+        { date: '2025-06-27', label: '1 Muharam Tahun Baru Islam 1447 Hijriah' },
+        { date: '2025-08-17', label: 'Proklamasi Kemerdekaan RI' },
+        { date: '2025-09-05', label: 'Maulid Nabi Muhammad SAW' },
+        { date: '2025-12-25', label: 'Kelahiran Yesus Kristus' },
+        { date: '2025-12-26', label: 'Cuti Bersama Kelahiran Yesus Kristus' },
+        // 2026
+        { date: '2026-01-01', label: 'Tahun Baru 2026 Masehi' },
+        { date: '2026-01-16', label: 'Isra Mikraj Nabi Muhammad SAW' },
+        { date: '2026-02-16', label: 'Cuti Bersama Tahun Baru Imlek' },
+        { date: '2026-02-17', label: 'Tahun Baru Imlek 2577 Kongzili' },
+        { date: '2026-03-18', label: 'Cuti Bersama Hari Suci Nyepi' },
+        { date: '2026-03-19', label: 'Hari Suci Nyepi Tahun Baru Saka 1948' },
+        { date: '2026-03-20', label: 'Cuti Bersama Idul Fitri 1447 Hijriah' },
+        { date: '2026-03-21', label: 'Idul Fitri 1447 Hijriah' },
+        { date: '2026-03-22', label: 'Idul Fitri 1447 Hijriah' },
+        { date: '2026-03-23', label: 'Cuti Bersama Idul Fitri 1447 Hijriah' },
+        { date: '2026-03-24', label: 'Cuti Bersama Idul Fitri 1447 Hijriah' },
+        { date: '2026-04-03', label: 'Wafat Yesus Kristus' },
+        { date: '2026-04-05', label: 'Kebangkitan Yesus Kristus (Paskah)' },
+        { date: '2026-05-01', label: 'Hari Buruh Internasional' },
+        { date: '2026-05-14', label: 'Kenaikan Yesus Kristus' },
+        { date: '2026-05-15', label: 'Cuti Bersama Kenaikan Yesus Kristus' },
+        { date: '2026-05-27', label: 'Idul Adha 1447 Hijriah' },
+        { date: '2026-05-28', label: 'Cuti Bersama Idul Adha 1447 Hijriah' },
+        { date: '2026-05-31', label: 'Hari Raya Waisak 2570 BE' },
+        { date: '2026-06-01', label: 'Hari Lahir Pancasila' },
+        { date: '2026-06-16', label: '1 Muharam Tahun Baru Islam 1448 Hijriah' },
+        { date: '2026-08-17', label: 'Proklamasi Kemerdekaan RI' },
+        { date: '2026-08-25', label: 'Maulid Nabi Muhammad SAW' },
+        { date: '2026-12-24', label: 'Cuti Bersama Kelahiran Yesus Kristus' },
+        { date: '2026-12-25', label: 'Kelahiran Yesus Kristus (Hari Natal)' },
+        // 2027
+        { date: '2027-01-01', label: 'Tahun Baru 2027 Masehi' },
+        { date: '2027-02-06', label: 'Tahun Baru Imlek 2578 Kongzili' },
+        { date: '2027-02-07', label: 'Isra Mikraj Nabi Muhammad SAW' },
+        { date: '2027-03-08', label: 'Hari Suci Nyepi Tahun Baru Saka 1949' },
+        { date: '2027-03-10', label: 'Idul Fitri 1448 Hijriah' },
+        { date: '2027-03-11', label: 'Idul Fitri 1448 Hijriah' },
+        { date: '2027-03-26', label: 'Wafat Yesus Kristus' },
+        { date: '2027-05-01', label: 'Hari Buruh Internasional' },
+        { date: '2027-05-06', label: 'Kenaikan Yesus Kristus' },
+        { date: '2027-05-17', label: 'Idul Adha 1448 Hijriah' },
+        { date: '2027-05-20', label: 'Hari Raya Waisak 2571 BE' },
+        { date: '2027-06-01', label: 'Hari Lahir Pancasila' },
+        { date: '2027-06-07', label: '1 Muharam Tahun Baru Islam 1449 Hijriah' },
+        { date: '2027-08-15', label: 'Maulid Nabi Muhammad SAW' },
+        { date: '2027-08-17', label: 'Proklamasi Kemerdekaan RI' },
+        { date: '2027-12-25', label: 'Kelahiran Yesus Kristus (Hari Natal)' },
+        // 2028
+        { date: '2028-01-01', label: 'Tahun Baru 2028 Masehi' },
+        { date: '2028-01-26', label: 'Tahun Baru Imlek 2579 Kongzili' },
+        { date: '2028-01-27', label: 'Isra Mikraj Nabi Muhammad SAW' },
+        { date: '2028-02-26', label: 'Idul Fitri 1449 Hijriah' },
+        { date: '2028-02-27', label: 'Idul Fitri 1449 Hijriah' },
+        { date: '2028-03-26', label: 'Hari Suci Nyepi Tahun Baru Saka 1950' },
+        { date: '2028-04-14', label: 'Wafat Yesus Kristus' },
+        { date: '2028-05-01', label: 'Hari Buruh Internasional' },
+        { date: '2028-05-04', label: 'Idul Adha 1449 Hijriah' },
+        { date: '2028-05-09', label: 'Hari Raya Waisak 2572 BE' },
+        { date: '2028-05-25', label: 'Kenaikan Yesus Kristus' },
+        { date: '2028-06-01', label: 'Hari Lahir Pancasila' },
+        { date: '2028-06-22', label: '1 Muharam Tahun Baru Islam 1450 Hijriah' },
+        { date: '2028-08-04', label: 'Maulid Nabi Muhammad SAW' },
+        { date: '2028-08-17', label: 'Proklamasi Kemerdekaan RI' },
+        { date: '2028-12-25', label: 'Kelahiran Yesus Kristus (Hari Natal)' },
+        // 2029
+        { date: '2029-01-01', label: 'Tahun Baru 2029 Masehi' },
+        { date: '2029-01-16', label: 'Isra Mikraj Nabi Muhammad SAW' },
+        { date: '2029-02-13', label: 'Tahun Baru Imlek 2580 Kongzili' },
+        { date: '2029-02-14', label: 'Idul Fitri 1450 Hijriah' },
+        { date: '2029-02-15', label: 'Idul Fitri 1450 Hijriah' },
+        { date: '2029-03-15', label: 'Hari Suci Nyepi Tahun Baru Saka 1951' },
+        { date: '2029-03-30', label: 'Wafat Yesus Kristus' },
+        { date: '2029-04-23', label: 'Idul Adha 1450 Hijriah' },
+        { date: '2029-05-01', label: 'Hari Buruh Internasional' },
+        { date: '2029-05-10', label: 'Kenaikan Yesus Kristus' },
+        { date: '2029-05-24', label: 'Hari Raya Waisak 2573 BE' },
+        { date: '2029-06-01', label: 'Hari Lahir Pancasila' },
+        { date: '2029-06-12', label: '1 Muharam Tahun Baru Islam 1451 Hijriah' },
+        { date: '2029-07-24', label: 'Maulid Nabi Muhammad SAW' },
+        { date: '2029-08-17', label: 'Proklamasi Kemerdekaan RI' },
+        { date: '2029-12-25', label: 'Kelahiran Yesus Kristus (Hari Natal)' }
+      ],
+      lembaga: []
+    };
+
+    function formatTanggalWIB(input = new Date()) {
+      const parsed = parseValidDate(input);
+      if (!parsed) return getTodayDateISO();
+      const parts = new Intl.DateTimeFormat('en-CA', {
+        timeZone: 'Asia/Jakarta',
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit'
+      }).formatToParts(parsed);
+      const y = parts.find((p) => p.type === 'year')?.value || '2026';
+      const m = parts.find((p) => p.type === 'month')?.value || '01';
+      const d = parts.find((p) => p.type === 'day')?.value || '01';
+      return `${y}-${m}-${d}`;
+    }
+
+    function getDayOfWeekWIB(isoDate) {
+      if (!isoDate || !/^\d{4}-\d{2}-\d{2}$/.test(isoDate)) {
+        const wibShort = new Intl.DateTimeFormat('en-US', {
+          timeZone: 'Asia/Jakarta',
+          weekday: 'short'
+        }).format(new Date());
+        const mapShort = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 };
+        return mapShort[wibShort] ?? 1;
+      }
+      // Gunakan jam 12:00 WIB (05:00 UTC) agar tanggal kalender WIB dan UTC selalu sama
+      const dt = new Date(`${isoDate}T12:00:00+07:00`);
+      return dt.getUTCDay();
+    }
+
+    function cekStatusTanggalMerah(input = new Date()) {
+      const isoDate = formatTanggalWIB(input);
+      const isSunday = getDayOfWeekWIB(isoDate) === 0;
+      const nasionalEntry = (TANGGAL_MERAH_LOKAL.nasional || []).find((item) => item.date === isoDate);
+      const lembagaEntry = (TANGGAL_MERAH_LOKAL.lembaga || []).find((item) => item.date === isoDate);
+
+      const isNasional = Boolean(nasionalEntry);
+      const isLembaga = Boolean(lembagaEntry);
+      const isTanggalMerah = isSunday || isNasional || isLembaga;
+
+      const reasons = [];
+      if (isNasional) reasons.push(nasionalEntry.label || 'Libur Nasional / Cuti Bersama');
+      if (isLembaga) reasons.push(lembagaEntry.label || 'Libur Khusus Madrasah');
+      if (isSunday) reasons.push('Hari Minggu');
+
+      let jenisLibur = null;
+      if (isNasional && isSunday) jenisLibur = `${reasons[0]} (Hari Minggu)`;
+      else if (isNasional) jenisLibur = reasons[0];
+      else if (isLembaga && isSunday) jenisLibur = `${reasons[0]} (Hari Minggu)`;
+      else if (isLembaga) jenisLibur = reasons[0];
+      else if (isSunday) jenisLibur = 'Hari Minggu';
+
+      return {
+        tanggal: isoDate,
+        isTanggalMerah,
+        isSunday,
+        isNasional,
+        isLembaga,
+        jenisLibur,
+        keterangan: reasons.join(' • ')
+      };
+    }
+
+    function renderRedDateBannerOnForm() {
+      const formCard = document.getElementById('attendance-form-card');
+      if (!formCard) return;
+
+      const statusHari = cekStatusTanggalMerah(new Date());
+      let banner = document.getElementById('red-date-form-banner');
+
+      if (!statusHari.isTanggalMerah) {
+        if (banner) banner.classList.add('hidden');
+        return;
+      }
+
+      if (!banner) {
+        banner = document.createElement('div');
+        banner.id = 'red-date-form-banner';
+        banner.className = 'mb-5 rounded-2xl border border-rose-200 bg-rose-50/90 px-4 py-3 text-xs text-rose-900 flex items-start gap-2.5';
+        const headerDiv = formCard.querySelector('div.border-b');
+        if (headerDiv && headerDiv.parentNode) {
+          headerDiv.parentNode.insertBefore(banner, headerDiv.nextSibling);
+        } else {
+          formCard.prepend(banner);
+        }
+      }
+
+      banner.innerHTML = `
+        <i data-lucide="calendar-x-2" class="w-4 h-4 text-rose-600 shrink-0 mt-0.5"></i>
+        <div class="leading-relaxed">
+          <div class="font-bold text-rose-800">Tanggal Merah / Hari Libur (${escapeHtml(formatDateShortID(statusHari.tanggal))})</div>
+          <div>Status: <strong>${escapeHtml(statusHari.jenisLibur || 'Hari Libur')}</strong>. Saat menekan Kirim Absensi akan muncul peringatan konfirmasi terlebih dahulu.</div>
+        </div>
+      `;
+      banner.classList.remove('hidden');
+      if (typeof lucide !== 'undefined' && lucide.createIcons) {
+        lucide.createIcons();
+      }
+    }
+
     const DEFAULT_SETTINGS = {
       adminName: "Muhammad Arjun Syifa', S.Pd.",
+      adminId: '17855943181078',
       schoolName: 'MI Raudlatus Sholihin Gemolong',
       academicYear: 'Sistem Absensi Guru & Tenaga Kependidikan • Tahun Ajaran 2026/2027',
       adminPin: '1234',
@@ -1288,11 +1512,11 @@
     }
 
     function getTodayDateISO() {
-      const now = new Date();
-      const y = now.getFullYear();
-      const m = String(now.getMonth() + 1).padStart(2, '0');
-      const d = String(now.getDate()).padStart(2, '0');
-      return `${y}-${m}-${d}`;
+      return formatTanggalWIB(new Date());
+    }
+
+    function generateInitialSampleRecords() {
+      return [];
     }
 
     function formatTimeHHMM(dateObj) {
@@ -1366,11 +1590,16 @@
 
       try {
         const rawRecords = localStorage.getItem(STORAGE_KEYS.RECORDS);
-        const parsedRecords = rawRecords ? JSON.parse(rawRecords) : null;
-        attendanceRecords = Array.isArray(parsedRecords) ? parsedRecords : [];
+        if (rawRecords !== null) {
+          const parsedRecords = JSON.parse(rawRecords);
+          attendanceRecords = Array.isArray(parsedRecords) ? parsedRecords : [];
+        } else {
+          attendanceRecords = generateInitialSampleRecords();
+          saveRecordsLocal();
+        }
       } catch (e) {
         console.warn('Gagal memuat riwayat absensi lokal:', e);
-        attendanceRecords = [];
+        attendanceRecords = generateInitialSampleRecords();
       }
     }
 
@@ -1468,8 +1697,11 @@
       setText('active-admin-badge-name', adminName);
       setText('daily-print-headmaster-name', headmasterName);
       setText('daily-print-headmaster-nip', `NIP. ${headmasterNip}`);
+      const adminIdFormatted = formatIdentityText(appSettings.adminId || DEFAULT_SETTINGS.adminId);
       setText('daily-print-admin-name', adminName);
+      setText('daily-print-admin-id', adminIdFormatted);
       setText('mreport-sign-admin-name', adminName);
+      setText('mreport-sign-admin-id', adminIdFormatted);
       setText('mreport-sign-headmaster-name', headmasterName);
       setText('mreport-sign-headmaster-nip', `NIP. ${headmasterNip}`);
 
@@ -1543,6 +1775,8 @@
         syncFromFirebase(true);
       }
 
+      addHolidayRow();
+      renderRedDateBannerOnForm();
       renderAttendanceTable();
       renderMonthlyIndividualReport();
       updateTodayStats();
@@ -1691,26 +1925,40 @@
     });
 
     function selectStatus(statusValue) {
+      const targetCard = document.querySelector(`.status-card[data-status="${statusValue}"]`);
+      if (targetCard && targetCard.dataset.dayLocked === '1') {
+        showToast('Pilihan ini dikunci karena hari ini sudah tercatat Izin, Sakit, atau Acara / Tugas Luar.', 'warning');
+        return;
+      }
+
       const hiddenInput = document.getElementById('selected-status');
       if (hiddenInput) hiddenInput.value = statusValue;
 
       document.querySelectorAll('.status-card').forEach((btn) => {
-        const isSelected = btn.getAttribute('data-status') === statusValue;
+        const isLocked = btn.dataset.dayLocked === '1';
+        const isSelected = !isLocked && btn.getAttribute('data-status') === statusValue;
         btn.classList.toggle('border-teal-600', isSelected);
         btn.classList.toggle('bg-teal-50/70', isSelected);
         btn.classList.toggle('ring-2', isSelected);
         btn.classList.toggle('ring-teal-500', isSelected);
-        btn.classList.toggle('border-slate-200', !isSelected);
-        btn.classList.toggle('bg-white', !isSelected);
+        if (!isLocked) {
+          btn.classList.toggle('border-slate-200', !isSelected);
+          btn.classList.toggle('bg-white', !isSelected);
+        }
       });
 
       const workModeSelect = document.getElementById('work-mode-select');
       if (workModeSelect) {
-        if (statusValue === 'Sakit' || statusValue === 'Izin') {
-          workModeSelect.value = 'Sakit / Izin';
+        if (statusValue === 'Sakit') {
+          workModeSelect.value = 'Sakit';
+        } else if (statusValue === 'Izin') {
+          workModeSelect.value = 'Izin';
         } else if (statusValue === 'Acara / Tugas Luar' && workModeSelect.value === 'WFO') {
           workModeSelect.value = 'Dinas Luar / LK';
-        } else if ((statusValue === 'Hadir - Masuk' || statusValue === 'Hadir - Pulang') && workModeSelect.value === 'Sakit / Izin') {
+        } else if (
+          (statusValue === 'Hadir - Masuk' || statusValue === 'Hadir - Pulang') &&
+          (workModeSelect.value === 'Sakit' || workModeSelect.value === 'Izin')
+        ) {
           workModeSelect.value = 'WFO';
         }
       }
@@ -1726,9 +1974,20 @@
       const photoBadge = document.getElementById('photo-requirement-badge');
       const wfhRule = document.getElementById('wfh-rule-note');
 
-      const needsNote = workMode === 'WFH' || workMode === 'Sakit / Izin' || statusVal === 'Sakit' || statusVal === 'Izin';
+      const needsNote =
+        workMode === 'WFH' ||
+        workMode === 'Sakit' ||
+        workMode === 'Izin' ||
+        statusVal === 'Sakit' ||
+        statusVal === 'Izin';
+
       if (noteBadge) {
-        noteBadge.textContent = workMode === 'WFH' ? '(Wajib No. Surat Tugas WFH)' : needsNote ? '(Wajib Diisi)' : '(Opsional)';
+        noteBadge.textContent =
+          workMode === 'WFH'
+            ? '(Wajib No. Surat Tugas WFH)'
+            : needsNote
+            ? '(Wajib Diisi)'
+            : '(Opsional)';
         noteBadge.className = needsNote
           ? 'ml-1 text-xs font-semibold text-rose-600'
           : 'ml-1 text-xs font-normal text-slate-400';
@@ -1741,12 +2000,9 @@
             : '*Ketentuan: Status <strong>WFH</strong> wajib disertai Surat Tugas WFH resmi dan keterangan penugasan.';
       }
 
-      const photoOptional = statusVal === 'Sakit' || statusVal === 'Izin' || workMode === 'Sakit / Izin';
       if (photoBadge) {
-        photoBadge.textContent = photoOptional ? '(Opsional bila tidak ada foto)' : '(Wajib Foto)';
-        photoBadge.className = photoOptional
-          ? 'ml-1 text-xs font-medium text-slate-500'
-          : 'ml-1 text-xs font-semibold text-rose-600';
+        photoBadge.textContent = '(Wajib Foto)';
+        photoBadge.className = 'ml-1 text-xs font-semibold text-rose-600';
       }
     }
 
@@ -1761,13 +2017,73 @@
       return matches[0];
     }
 
+    function findTodayBlockingDayRecord(teacherId) {
+      if (!teacherId) return null;
+      const todayISO = getTodayDateISO();
+      const blockingStatuses = new Set(['Izin', 'Sakit', 'Acara / Tugas Luar']);
+      const matches = attendanceRecords.filter(
+        (r) => String(r.teacherId) === String(teacherId) && r.dateISO === todayISO && blockingStatuses.has(r.status)
+      );
+      if (matches.length === 0) return null;
+      matches.sort((a, b) => (parseValidDate(b.timestamp)?.getTime() || 0) - (parseValidDate(a.timestamp)?.getTime() || 0));
+      return matches[0];
+    }
+
+    function applyTodayStatusCardLocks(teacherId) {
+      const blockingRec = findTodayBlockingDayRecord(teacherId);
+      const hiddenStatus = document.getElementById('selected-status');
+      const lockedAttendanceStatuses = new Set(['Hadir - Masuk', 'Hadir - Pulang']);
+
+      document.querySelectorAll('.status-card').forEach((btn) => {
+        const cardStatus = btn.getAttribute('data-status') || '';
+        const shouldLock = Boolean(blockingRec) && lockedAttendanceStatuses.has(cardStatus);
+
+        if (shouldLock) {
+          btn.dataset.dayLocked = '1';
+          btn.disabled = true;
+          btn.setAttribute('aria-disabled', 'true');
+          btn.classList.add('opacity-45', 'cursor-not-allowed', 'bg-slate-100', 'border-slate-200');
+          btn.classList.remove('hover:border-emerald-400', 'hover:border-blue-400', 'border-teal-600', 'bg-teal-50/70', 'ring-2', 'ring-teal-500', 'bg-white');
+          if (hiddenStatus && hiddenStatus.value === cardStatus) {
+            hiddenStatus.value = '';
+          }
+        } else {
+          btn.dataset.dayLocked = '0';
+          btn.disabled = false;
+          btn.removeAttribute('aria-disabled');
+          btn.classList.remove('opacity-45', 'cursor-not-allowed', 'bg-slate-100');
+          if (cardStatus === 'Hadir - Masuk') btn.classList.add('hover:border-emerald-400');
+          if (cardStatus === 'Hadir - Pulang') btn.classList.add('hover:border-blue-400');
+          const isSelected = hiddenStatus && hiddenStatus.value === cardStatus;
+          btn.classList.toggle('border-teal-600', Boolean(isSelected));
+          btn.classList.toggle('bg-teal-50/70', Boolean(isSelected));
+          btn.classList.toggle('ring-2', Boolean(isSelected));
+          btn.classList.toggle('ring-teal-500', Boolean(isSelected));
+          btn.classList.toggle('border-slate-200', !isSelected);
+          btn.classList.toggle('bg-white', !isSelected);
+        }
+      });
+
+      return blockingRec;
+    }
+
     function refreshDuplicateMasukNotice() {
       const noticeBox = document.getElementById('duplicate-masuk-notice');
       const noticeText = document.getElementById('duplicate-masuk-notice-text');
       const teacherId = document.getElementById('selected-teacher-id')?.value || '';
       const statusVal = document.getElementById('selected-status')?.value || '';
 
+      const blockingRec = applyTodayStatusCardLocks(teacherId);
+
       if (!noticeBox || !noticeText) return;
+
+      if (blockingRec && teacherId) {
+        const jamTercatat = formatTimeHHMM(blockingRec.timestamp);
+        noticeText.textContent = `Hari ini sudah tercatat "${blockingRec.status}" (pukul ${jamTercatat}). Absen Hadir - Masuk dan Hadir - Pulang dikunci untuk hari ini; hubungi Admin jika ada perubahan status.`;
+        noticeBox.classList.remove('hidden');
+        return;
+      }
+
       if (statusVal !== 'Hadir - Masuk' || !teacherId) {
         noticeBox.classList.add('hidden');
         return;
@@ -1913,7 +2229,24 @@
         return;
       }
 
-      const needsNote = workMode === 'WFH' || workMode === 'Sakit / Izin' || statusVal === 'Sakit' || statusVal === 'Izin';
+      const blockingRec = findTodayBlockingDayRecord(teacher.id);
+      if (blockingRec && (statusVal === 'Hadir - Masuk' || statusVal === 'Hadir - Pulang')) {
+        const jamTercatat = formatTimeHHMM(blockingRec.timestamp);
+        showToast(
+          `Tidak bisa kirim ${statusVal}: hari ini sudah tercatat "${blockingRec.status}" pukul ${jamTercatat}.`,
+          'warning'
+        );
+        refreshDuplicateMasukNotice();
+        return;
+      }
+
+      const needsNote =
+        workMode === 'WFH' ||
+        workMode === 'Sakit' ||
+        workMode === 'Izin' ||
+        statusVal === 'Sakit' ||
+        statusVal === 'Izin';
+
       if (needsNote && !rawNote) {
         showToast(
           workMode === 'WFH'
@@ -1925,9 +2258,44 @@
         return;
       }
 
-      const photoOptional = statusVal === 'Sakit' || statusVal === 'Izin' || workMode === 'Sakit / Izin';
-      if (!photoOptional && !currentPhotoBase64) {
+      if (!currentPhotoBase64) {
         showToast('Silakan ambil swafoto atau pilih foto bukti kehadiran terlebih dahulu.', 'warning');
+        return;
+      }
+
+      const redDateInfo = cekStatusTanggalMerah(new Date());
+      const proceedAfterRedDateCheck = () => {
+        if (statusVal === 'Hadir - Masuk') {
+          const existingMasuk = findTodayMasukRecord(teacher.id);
+          if (existingMasuk) {
+            const jamSudahMasuk = formatTimeHHMM(existingMasuk.timestamp);
+            openConfirmModal(
+              'Sudah Tercatat Absen Masuk Hari Ini',
+              `${teacher.name} sudah tercatat absen masuk hari ini pukul ${jamSudahMasuk}. Yakin ingin mengirim absen masuk lagi?`,
+              () => finalizeAndSaveAttendance(teacher, statusVal, workMode, rawNote),
+              {
+                yesLabel: 'Ya, Kirim Lagi',
+                cancelLabel: 'Batal',
+                yesButtonClass: 'bg-amber-600 hover:bg-amber-700 text-white'
+              }
+            );
+            return;
+          }
+        }
+        finalizeAndSaveAttendance(teacher, statusVal, workMode, rawNote);
+      };
+
+      if (redDateInfo.isTanggalMerah) {
+        openConfirmModal(
+          'Peringatan Tanggal Merah / Hari Libur',
+          `Tanggal ${formatDateShortID(redDateInfo.tanggal)} terdeteksi sebagai tanggal merah (${redDateInfo.jenisLibur}). Apakah Anda tetap ingin mengirim absensi untuk ${teacher.name}?`,
+          proceedAfterRedDateCheck,
+          {
+            yesLabel: 'Tetap Kirim Absensi',
+            cancelLabel: 'Batal',
+            yesButtonClass: 'bg-rose-600 hover:bg-rose-700 text-white'
+          }
+        );
         return;
       }
 
@@ -2479,23 +2847,47 @@
       renderAttendanceTable();
     }
 
-    function parseHolidayDatesMap() {
-      const raw = document.getElementById('monthly-holiday-dates-input')?.value || '';
-      const map = new Map();
-      // Split by comma or semicolon outside parentheses
-      const parts = raw.split(/[,;]+(?![^()]*\))/);
-      parts.forEach((rawPart) => {
-        const part = rawPart.trim();
-        if (!part) return;
-        let datePart = part;
-        let label = '';
-        const parenMatch = part.match(/^([^(]+)\(([^)]*)\)/);
-        if (parenMatch) {
-          datePart = parenMatch[1].trim();
-          label = parenMatch[2].trim();
-        }
-        const finalLabel = label || 'Libur Nasional / Madrasah';
-        const rangeMatch = datePart.match(/^(\d{1,2})\s*[-–—]\s*(\d{1,2})$/);
+    function addHolidayRow(dateVal = '', labelVal = '') {
+      const container = document.getElementById('holiday-rows-container');
+      if (!container) return;
+      const row = document.createElement('div');
+      row.className = 'holiday-entry-row grid grid-cols-12 gap-2 items-center';
+      row.innerHTML = `
+        <div class="col-span-4 sm:col-span-3">
+          <input type="text" value="${escapeHtml(dateVal)}" placeholder="Tgl (misal: 1-2 atau 17)" oninput="renderMonthlyIndividualReport()" class="holiday-date-field w-full px-2.5 py-1.5 bg-white border border-slate-300 rounded-xl text-xs font-mono focus:outline-none focus:ring-2 focus:ring-teal-500" />
+        </div>
+        <div class="col-span-7 sm:col-span-8">
+          <input type="text" value="${escapeHtml(labelVal)}" placeholder="Keterangan (misal: Cuti Bersama / Liburan Semester)" oninput="renderMonthlyIndividualReport()" class="holiday-label-field w-full px-2.5 py-1.5 bg-white border border-slate-300 rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-teal-500" />
+        </div>
+        <div class="col-span-1 text-right">
+          <button type="button" onclick="removeHolidayRow(this)" class="p-1.5 text-slate-400 hover:text-rose-600 hover:bg-rose-50 rounded-lg transition" title="Hapus baris">
+            <i data-lucide="x" class="w-4 h-4"></i>
+          </button>
+        </div>
+      `;
+      container.appendChild(row);
+      lucide.createIcons();
+    }
+
+    function removeHolidayRow(btn) {
+      const container = document.getElementById('holiday-rows-container');
+      const row = btn.closest('.holiday-entry-row');
+      if (row) row.remove();
+      if (container && container.children.length === 0) {
+        addHolidayRow();
+      }
+      renderMonthlyIndividualReport();
+    }
+
+    function applyParsedDateToken(map, rawDateStr, rawLabelStr) {
+      const datePart = String(rawDateStr || '').trim();
+      if (!datePart) return;
+      const finalLabel = String(rawLabelStr || '').trim() || 'Libur Nasional / Madrasah';
+
+      datePart.split(/[,;]+/).forEach((segment) => {
+        const seg = segment.trim();
+        if (!seg) return;
+        const rangeMatch = seg.match(/^(\d{1,2})\s*[-–—]\s*(\d{1,2})$/);
         if (rangeMatch) {
           let startDay = parseInt(rangeMatch[1], 10);
           let endDay = parseInt(rangeMatch[2], 10);
@@ -2506,13 +2898,38 @@
             }
           }
         } else {
-          // Support space-separated numbers without parens e.g. "1 16"
-          datePart.split(/\s+/).forEach((token) => {
+          seg.split(/\s+/).forEach((token) => {
             const num = parseInt(token.replace(/\D+/g, ''), 10);
             if (!Number.isNaN(num) && num >= 1 && num <= 31) {
               map.set(num, finalLabel);
             }
           });
+        }
+      });
+    }
+
+    function parseHolidayDatesMap() {
+      const map = new Map();
+      const rows = document.querySelectorAll('#holiday-rows-container .holiday-entry-row');
+      rows.forEach((row) => {
+        const dateRaw = row.querySelector('.holiday-date-field')?.value || '';
+        const labelRaw = row.querySelector('.holiday-label-field')?.value || '';
+        if (!dateRaw.trim()) return;
+
+        if (!labelRaw.trim() && dateRaw.includes('(')) {
+          const parts = dateRaw.split(/[,;]+(?![^()]*\))/);
+          parts.forEach((rawPart) => {
+            const part = rawPart.trim();
+            if (!part) return;
+            const parenMatch = part.match(/^([^(]+)\(([^)]*)\)/);
+            if (parenMatch) {
+              applyParsedDateToken(map, parenMatch[1], parenMatch[2]);
+            } else {
+              applyParsedDateToken(map, part, '');
+            }
+          });
+        } else {
+          applyParsedDateToken(map, dateRaw, labelRaw);
         }
       });
       return map;
@@ -2588,13 +3005,20 @@
         const dayStr = String(day).padStart(2, '0');
         const dateISO = `${monthPrefix}-${dayStr}`;
         const dt = new Date(yearNum, monthIdx, day);
-        const dayOfWeek = dt.getDay(); // 0 = Minggu, 5 = Jumat, 6 = Sabtu
+        const dayOfWeek = dt.getDay();
         const dayName = dt.toLocaleDateString('id-ID', { weekday: 'long' });
         const dayLabelText = `${dayName}, ${day} ${monthNamesUpper[monthIdx].charAt(0) + monthNamesUpper[monthIdx].slice(1).toLowerCase()} ${yearNum}`;
 
         const isSunday = dayOfWeek === 0;
-        const customHolidayLabel = holidayMap.get(day) || '';
-        const isCustomHoliday = holidayMap.has(day);
+        const redDateDayInfo = cekStatusTanggalMerah(`${dateISO}T12:00:00+07:00`);
+        const nasionalDayLabel = redDateDayInfo.isNasional
+          ? (TANGGAL_MERAH_LOKAL.nasional.find((n) => n.date === dateISO)?.label || 'Libur Nasional / Cuti Bersama')
+          : '';
+        const lembagaDayLabel = redDateDayInfo.isLembaga
+          ? (TANGGAL_MERAH_LOKAL.lembaga.find((l) => l.date === dateISO)?.label || 'Libur Khusus Madrasah')
+          : '';
+        const customHolidayLabel = holidayMap.get(day) || nasionalDayLabel || lembagaDayLabel || '';
+        const isCustomHoliday = holidayMap.has(day) || redDateDayInfo.isNasional || redDateDayInfo.isLembaga;
         const isHoliday = isSunday || isCustomHoliday;
 
         const dayRecs = teacherMonthRecords
@@ -2626,6 +3050,8 @@
           if (rec.workMode) detectedWorkMode = rec.workMode;
           else if (String(rec.note || '').includes('[WFH]')) detectedWorkMode = 'WFH';
           else if (String(rec.note || '').includes('[Dinas Luar / LK]')) detectedWorkMode = 'Dinas Luar / LK';
+          else if (String(rec.note || '').includes('[Sakit]')) detectedWorkMode = 'Sakit';
+          else if (String(rec.note || '').includes('[Izin]')) detectedWorkMode = 'Izin';
           else if (String(rec.note || '').includes('[WFO]')) detectedWorkMode = 'WFO';
         });
 
@@ -2640,10 +3066,10 @@
           } else {
             statusText = 'Libur Hari Minggu';
           }
-        } else if (sakitRec) {
+        } else if (sakitRec || detectedWorkMode === 'Sakit') {
           statusText = 'Sakit';
           sakitCount++;
-        } else if (izinRec) {
+        } else if (izinRec || detectedWorkMode === 'Izin') {
           statusText = 'Izin';
           izinCount++;
         } else if (masukRec || pulangRec || acaraRec) {
